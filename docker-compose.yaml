@@ -1,6 +1,6 @@
 services:
   pasarguard:
-    image: pasarguard/panel:TAG
+    image: pasarguard/panel:v5.4.1
     restart: always
     env_file: .env
     network_mode: host
