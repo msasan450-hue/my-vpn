@@ -4,9 +4,11 @@ zerops:
       deployFiles:
         - docker-compose.yaml
         - .env
+                - Caddyfile
       addToRunPrepare:
         - docker-compose.yaml
         - .env
+                - Caddyfile
     run:
       base: docker@latest
       prepareCommands:
