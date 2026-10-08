@@ -6,3 +6,9 @@ services:
     network_mode: host
     volumes:
       - /var/lib/pasarguard:/var/lib/pasarguard
+  proxy:
+    image: caddy:2.8.4
+    restart: always
+    network_mode: host
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
