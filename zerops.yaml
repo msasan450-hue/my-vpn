@@ -1,21 +1,20 @@
-zerops:
-  - setup: pasarguard
-    build:
-      deployFiles:
-        - docker-compose.yaml
-        - .env
-                - Caddyfile
-      addToRunPrepare:
-        - docker-compose.yaml
-        - .env
-                - Caddyfile
-    run:
-      base: docker@latest
-      prepareCommands:
-        - docker compose pull
-      start: docker compose up --force-recreate
-      ports:
-        - port: 8000
-          httpSupport: true
-        - port: 2053
-          httpSupport: false
+setup: pasarguard
+build:
+deployFiles:
+- docker-compose.yaml
+- .env
+- Caddyfile
+addToRunPrepare:
+- docker-compose.yaml
+- .env
+- Caddyfile
+run:
+base: docker@latest
+prepareCommands:
+- docker compose pull
+start: docker compose up --force-recreate
+ports:
+- port: 8000
+httpSupport: true
+- port: 2053
+httpSupport: false
